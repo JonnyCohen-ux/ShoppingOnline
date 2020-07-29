@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+nav {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-shadow: 5px 3px 10px lightgray;
+  margin-bottom: 10px;
+  background: #eee;
+  position: relative;
+}
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  outline: none;
+  cursor: pointer;
+}
+.logo img {
+  width: 75px;
+}
+.logo h1 {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: deepskyblue;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin-right: 5px;
+  letter-spacing: 2px;
+}
+.logo span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+.userName {
+  position: absolute;
+  right: 10%;
+  font-family: "Bad Script", cursive;
+}
+.userName h2 {
+  font-family: "Bad Script", cursive;
+}
+nav .logOut {
+  margin-left: 50px;
+}

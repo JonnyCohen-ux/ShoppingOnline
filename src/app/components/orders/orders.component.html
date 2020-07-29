@@ -1,0 +1,90 @@
+<div id="ordersContainer">
+    <div [class.orderMsg]="orderMsg" class="orderMessage">
+        <h1>
+            order complete successfully
+            <i style="color: yellowgreen;" class="far fa-check-circle"></i>
+        </h1>
+        <a [href]="fileUrl" download="file.txt">Download Order</a>
+        <button class="navigateButton" routerLink="/home" (click)="navigateHome()">Back to home page</button>
+    </div>
+    <div class="orderDetails">
+        <button [class.cantBeTouched]="orderMsg" class="backButton navigateButton" routerLink="/shop">Back to
+            shop</button>
+        <div class="title">
+            <h1>YOUR ORDER :</h1>
+        </div>
+        <div [class.cantBeTouched]="orderMsg" class="search">
+            <img src="../../../assets/website-images/white-logo.png" alt="">
+            <input (keyup)="getValue($event)" type="text" placeholder="Search...">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="order">
+            <h1 *ngIf="!tableAviable">YOUR CART IS EMPTY</h1>
+            <table *ngIf="tableAviable">
+                <thead>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>Units</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                    <tr [class.bord]="searched" *ngFor="let unit of order">
+                        <td><img src="{{unit.c_product_image}}" alt=""></td>
+                        <td>{{unit.product_name}}</td>
+                        <td>{{unit.product_price | currency}}</td>
+                        <td>{{unit.quantity}}</td>
+                        <td>{{unit.quantity * unit.product_price | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="totalPirce">
+            <h3>Total Price: {{totalPrice | currency}} </h3>
+        </div>
+    </div>
+    <div class="middle"></div>
+    <div class="shippingDetails">
+        <div class="title">
+            <h1>Shipping Details :</h1>
+        </div>
+        <div [class.cantBeTouched]="orderMsg" class="shippingForm">
+            <form (submit)="setOrder()" [formGroup]="orderForm">
+                <div class="adress">
+                    <label for="shipping_city">
+                        <input (dblclick)="setAdress()" [class.red]="checkValidation(fromControlers.shipping_city)"
+                            placeholder="City" type="text" formControlName="shipping_city" name="" id="">
+                        <small *ngIf="checkValidation(fromControlers.shipping_city)">Enter shipping city</small>
+                    </label>
+                    <label for="shipping_street">
+                        <input (dblclick)="setAdress()" [class.red]="checkValidation(fromControlers.shipping_street)"
+                            placeholder="Street" type="text" formControlName="shipping_street" name="" id="">
+                        <small *ngIf="checkValidation(fromControlers.shipping_street)">Enter shipping street</small>
+                    </label>
+                </div>
+                <div class="payAndDate">
+                    <label for="shipping_date">
+                        <input [class.red]="checkValidation(fromControlers.shipping_date)" type="date"
+                            formControlName="shipping_date" name="" id="">
+                        <small *ngIf="checkValidation(fromControlers.shipping_date)">Select shipping date</small>
+                    </label>
+                    <label for="payment">
+                        <input [class.red]="checkValidation(fromControlers.payment)" placeholder="payment" type="text"
+                            formControlName="payment" name="" id="">
+                        <div *ngIf="checkValidation(fromControlers.payment)">
+                            <small *ngIf="fromControlers.payment.errors.required">Enter last 4 card numbers</small>
+                            <small *ngIf="fromControlers.payment.errors.paymnetLength"> 4 numbers required</small>
+                        </div>
+                    </label>
+                </div>
+                <div class="orderButton">
+                    <button type="submit">Order Now</button>
+                </div>
+            </form>
+        </div>
+        <div class=" images">
+            <img src="../../../assets/website-images/skyMoney.svg" alt="">
+            <img src="../../../assets/website-images/creditCard.svg" alt="">
+        </div>
+    </div>
+</div>

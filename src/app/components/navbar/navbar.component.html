@@ -1,0 +1,13 @@
+<nav>
+    <div routerLink='/' class="logo">
+        <img src="../../../assets/website-images/logo.png" alt="">
+        <h1>S</h1>
+        <span>hopping Online</span>
+    </div>
+    <div class="userName">
+        <h2>{{user?.isLog ? 'Welcome ' + user?.username : "Hello Guest"}}</h2>
+    </div>
+    <button class="logOut navigateButton" routerLink="/home" *ngIf="user?.isLog" (click)="logout()">Logout</button>
+</nav>
+
+<router-outlet></router-outlet>

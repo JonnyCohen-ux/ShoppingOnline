@@ -1,0 +1,15 @@
+<div id="homeContainer">
+    <h1 class="soBg">Shopping <br> Online</h1>
+    <app-login></app-login>
+    <app-about></app-about>
+    <app-store-data></app-store-data>
+    <div [class.active]="isLog" class="shoppingButton">
+        <h4>{{isLog ? 'Welcome ' + userNmae : buttonMessege }}</h4>
+        <button class="shopButton" [disabled]="!isLog" (click)="startShop()">
+            <span>
+                {{cartCheck.length > 0 ? "Keep Shopping" : shopButton}}
+            </span>
+        </button>
+    </div>
+    <app-register [class.scrollDown]="register()"></app-register>
+</div>

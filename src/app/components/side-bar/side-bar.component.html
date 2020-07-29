@@ -1,0 +1,38 @@
+<div id="sideBarContainer">
+    <div class="sideBarHeader">
+        <div class="priceAndQuanity">
+            <h5>Total price : {{totalPrice| currency }}$</h5>
+            <h5>Units : {{totalUnits}}</h5>
+
+        </div>
+        <div class="userCart">
+            <img src="../../../assets/website-images/white-logo.png" alt="">
+            <h2>User cart</h2>
+        </div>
+    </div>
+    <div class="sideBarProducts">
+        <div class="sidebarProductsContainer">
+            <div class="emptyMassaege" *ngIf="emptyCart">
+                <h2>Empty <br> Cart</h2>
+            </div>
+
+            <div *ngFor="let product of userCart" class="sideBarCartItem">
+                <div (click)="deleteProduct(product)" class="x"><i class="fas fa-trash"></i></div>
+                <div class="cartImg">
+                    <img src="{{product.c_product_image}}" alt="">
+                </div>
+                <div class="nameAndPrice">
+                    <h5>{{product.product_name}}</h5>
+                    <h5>Pirce: {{product.product_price}}$</h5>
+                </div>
+                <div class="cartQuanity">
+                    <h5>{{product.quantity}} <br> units</h5>
+                </div>
+                <div class="totalPrice">
+                    <h5>{{product.total_price}}$</h5>
+                </div>
+            </div>
+        </div>
+        <button routerLink="/orders" class="orderButton">Order now</button>
+    </div>
+</div>

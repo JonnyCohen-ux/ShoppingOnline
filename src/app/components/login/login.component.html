@@ -1,0 +1,24 @@
+<div id="loginForm">
+    <form [formGroup]="form" (submit)="login()">
+        <h1>Login</h1>
+        <label for="userMail">
+            <input (keyup)="errorMsg()" type="text" id="userMail" formControlName="email"
+                [class.red]="checkInputStatus(fromControlers.email)" placeholder="Enter your email">
+            <div *ngIf="checkInputStatus(fromControlers.email)">
+                <small>Email is Required</small>
+            </div>
+        </label>
+        <label for="userpassword">
+            <input (keyup)="errorMsg()" formControlName="password" type="password" id="userpassword"
+                placeholder="Enter your password" [class.red]="checkInputStatus(fromControlers.password)">
+            <div *ngIf="checkInputStatus(fromControlers.password)">
+                <small>Password is Required</small>
+            </div>
+            <br>
+            <small style="color: red;">{{errorMessage}}</small>
+
+        </label>
+        <a (click)="callRegister()">Don't have an account yet? <b>Register now!</b></a>
+        <button type="submit">Login</button>
+    </form>
+</div>

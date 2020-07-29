@@ -1,0 +1,198 @@
+#shopContainer {
+  width: 100%;
+  height: 88vh;
+  background: #eee;
+  overflow: auto;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  box-shadow: 5px 3px 10px lightgray;
+  margin-bottom: 10px;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.categories {
+  width: 80%;
+  height: 100%;
+}
+.categories ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.categories ul li {
+  padding-top: 10px;
+  list-style: none;
+  padding-right: 5px;
+  border-right: 1px solid darkgray;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  transition: 0.2s;
+}
+ul li:hover {
+  cursor: pointer;
+  color: deeppink;
+  box-shadow: 0 0 10px lightgray;
+  padding: 10px;
+}
+li:focus {
+  border: 2px solid black;
+  color: deeppink;
+}
+ul li:checked {
+  border: 2px solid black;
+  color: deeppink;
+}
+.cartSideBar {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.stick {
+  width: 2px;
+  height: 90%;
+  background-color: lightgray;
+}
+.cartLogo {
+  display: flex;
+  align-items: center;
+  height: 70%;
+  padding: 3px;
+  width: 40%;
+  background-color: #272727;
+  color: #fff;
+  position: absolute;
+  border-radius: 50px;
+  font-size: 14px;
+  left: 50px;
+  justify-content: space-evenly;
+}
+
+.menuButton {
+  width: 60px;
+  height: 60px;
+  transition: 0.5s ease-in-out all;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 200px;
+}
+.menuButtonBurger {
+  width: 30px;
+  height: 3px;
+  border-radius: 50px;
+  background-color: #272727;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out all;
+}
+.menuButtonBurger::before,
+.menuButtonBurger::after {
+  content: "";
+  transition: 0.5s ease-in-out all;
+  width: 30px;
+  height: 3px;
+  position: absolute;
+  background-color: #272727;
+  border-radius: 50px;
+}
+.menuButtonBurger::before {
+  transform: translateY(-10px);
+}
+.menuButtonBurger::after {
+  transform: translateY(10px);
+}
+.menuButton.open .menuButtonBurger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+.menuButton.open .menuButtonBurger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menuButton.open .menuButtonBurger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+app-search {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#shopStoreContainer {
+  display: flex;
+  width: 100%;
+  height: 79vh;
+}
+.cart {
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+.products {
+  margin-top: 70px;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  transition: 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.products app-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+side-bar {
+  margin-top: 70px;
+  left: -420px;
+  position: fixed;
+  transition: 0.5s;
+}
+.addWidth {
+  width: 20%;
+}
+.lessWidth {
+  width: 80%;
+}
+.callSideBar {
+  left: 10px;
+}
+.soBg {
+  position: absolute;
+  font-size: 160px;
+  letter-spacing: 5px;
+  opacity: 0.05;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  text-align: center;
+}
+a {
+  width: 200%;
+  height: 100%;
+}
+
+.active-link {
+  background-color: royalblue;
+  color: royalblue;
+}

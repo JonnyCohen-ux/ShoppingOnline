@@ -1,0 +1,18 @@
+<div id="productsContainer">
+    <div class="card" *ngFor="let pro of currentCategory" [class.addBlur]="callInfo">
+        <div class="leftSide">
+            <img [src]="pro.product_img" alt="">
+        </div>
+
+        <div class="rightSide">
+            <div class="name">
+                <h3>{{pro.product_name}}</h3>
+            </div>
+            <div class="price">
+                <h5>{{pro.product_price | currency}}</h5>
+            </div>
+            <button (click)="inforamtion(pro)">Add</button>
+        </div>
+    </div>
+    <product *ngIf="callInfo" [product]="product"></product>
+</div>

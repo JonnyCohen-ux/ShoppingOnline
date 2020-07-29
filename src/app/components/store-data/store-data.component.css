@@ -1,0 +1,50 @@
+#storeDataContainer {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  text-align: center;
+  width: 350px;
+  height: 350px;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 10px #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card .cardHeader {
+  top: 0;
+}
+.cardHeader svg {
+  margin-top: -5px;
+}
+#storeDataContainer img {
+  width: 150px;
+  margin-bottom: 5px;
+}
+.cardHeader {
+  color: black;
+  width: 100%;
+  height: 50px;
+  background: #eee;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.notfication {
+  font-size: 18px;
+  width: 70%;
+  margin: auto;
+}
+.amounts {
+  font-size: 30px;
+}
+#data {
+  margin-top: 60px;
+}

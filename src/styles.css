@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+* {
+  font-family: "MuseoModerno", cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+}
+form input,
+.ImageUpload {
+  padding: 10px;
+  border: none;
+  border: 2px solid deepskyblue;
+  border-radius: 20px;
+  background: none;
+  outline: none;
+  transition: 0.3s;
+  color: #fff;
+  width: 100%;
+}
+form input:focus,
+form select:focus,
+.ImageUpload:focus {
+  border: 2px solid greenyellow;
+  border-left: 10px greenyellow solid;
+  border-right: 10px greenyellow solid;
+}
+
+form a {
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  width: 200px;
+}
+
+form button {
+  background: none;
+  border: none;
+  border: 2px solid deeppink;
+  border-radius: 50px;
+  width: 100px;
+  padding: 5px;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  outline: none;
+}
+form button:hover {
+  background-color: deeppink;
+}
+form button:active {
+  transform: scale(0.8);
+}
+form small {
+  color: #fff;
+  font-size: 12px;
+}
+
+.red {
+  border: 2px solid red;
+}
+.messageError {
+  color: red;
+}
+
+.navigateButton {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+.navigateButton::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  bottom: -100%;
+  left: 50%;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+  transition: 0.5s;
+}
+.navigateButton:hover::before {
+  width: 100%;
+}
+
+small {
+  font-size: 10px;
+}
+
+select {
+  width: 58%;
+  height: 40px;
+  border-radius: 50px;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid deepskyblue;
+  padding-left: 25px;
+}

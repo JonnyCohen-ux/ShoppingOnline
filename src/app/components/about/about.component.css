@@ -1,0 +1,15 @@
+#aboutContainer {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+#aboutContainer h1 {
+  text-align: center;
+}
+.aboutHeader {
+  display: flex;
+}
+.aboutHeader img {
+  width: 90px;
+  margin-left: 40px;
+}

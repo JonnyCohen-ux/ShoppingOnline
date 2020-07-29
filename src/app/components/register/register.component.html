@@ -1,0 +1,87 @@
+<div id="registerContainer">
+    <div class="card" [class.swipe]="swipeIsOpen">
+        <form [formGroup]="registerFrom" (submit)="sendSubmit()">
+
+            <div class="frontFrom">
+                <div (click)="callRegister()" class="closeButton">
+                    <h3>Close</h3>
+                </div>
+                <h1>Register</h1>
+                <label for="id">
+                    <input [class.red]="checkValidation(fromControlers.user_id)" formControlName="user_id" type="text"
+                        id="user_id" placeholder="Enter ID">
+                    <div *ngIf="checkValidation(fromControlers.user_id)">
+                        <small *ngIf="fromControlers.user_id.errors.required">Input Required</small>
+                    </div>
+                </label>
+                <label for="email">
+                    <input [class.red]="checkValidation(fromControlers.email)" formControlName="email" type="email"
+                        id="email" placeholder="Enter your email">
+                    <div *ngIf="checkValidation(fromControlers.email)">
+                        <small *ngIf="fromControlers.email.errors.required">Email Input Required</small>
+                        <small *ngIf="fromControlers.email.errors.email">Please enter a valid email</small>
+                    </div>
+                </label>
+                <label for="password">
+                    <input [class.red]="checkValidation(fromControlers.password)" formControlName="password"
+                        type="password" id="password" placeholder="Enter a password">
+                    <div *ngIf="checkValidation(fromControlers.password)">
+                        <small *ngIf="fromControlers.password.errors.passwordVali"> Password must have 6 char</small>
+                        <small *ngIf="fromControlers.password.errors.required"> Input Required</small>
+                    </div>
+                </label>
+                <label for="rePassword">
+                    <input [class.red]="checkValidation(fromControlers.confirm_password)"
+                        formControlName="confirm_password" type="password" id="confirm_password"
+                        placeholder="Enter repassword">
+                    <div *ngIf="checkValidation(fromControlers.confirm_password)">
+                        <small *ngIf="fromControlers.confirm_password.errors.passwordVali"> Password must have 6
+                            char</small>
+                        <small *ngIf="fromControlers.confirm_password.errors.required"> Input Required</small>
+                        <small *ngIf="fromControlers.confirm_password.errors.mustMatch"> Password must match</small>
+                    </div>
+                </label>
+                <div [class.messageError]="errorMessege">
+                    {{errorMessege ? errorMessege : ''}}
+                </div>
+
+                <button type="button" (click)="swipe()">Next</button>
+            </div>
+            <div class="backFrom">
+                <label for="cities">
+                    <h3 (click)="swipe()">back</h3>
+                    <select [class.red]="checkValidation(fromControlers.city)" formControlName="city" name="cities"
+                        id="cities">
+                        <option value>Select city</option>
+                        <option *ngFor="let city of registerCities" value="{{city}}">{{city}}</option>
+                    </select>
+                    <div *ngIf="checkValidation(fromControlers.city)">
+                        <small>Please Select city</small>
+                    </div>
+                </label>
+                <label for="street">
+                    <input [class.red]="checkValidation(fromControlers.street)" formControlName="street" type="text"
+                        id="street" placeholder="Enter Street">
+                    <div *ngIf="checkValidation(fromControlers.street)">
+                        <small>Please enter street</small>
+                    </div>
+                </label>
+                <label for="name">
+                    <input [class.red]="checkValidation(fromControlers.first_name)" formControlName="first_name"
+                        type="text" id="name" placeholder="Enter a name">
+                    <div *ngIf="checkValidation(fromControlers.first_name)">
+                        <small>Please enter your name</small>
+                    </div>
+                </label>
+                <label for="lastName">
+                    <input [class.red]="checkValidation(fromControlers.last_name)" formControlName="last_name"
+                        type="text" id="lastName" placeholder="Enter your last name">
+                    <div *ngIf="checkValidation(fromControlers.last_name)">
+                        <small>Please enter your last name</small>
+                    </div>
+                </label>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

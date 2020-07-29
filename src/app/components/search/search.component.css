@@ -1,0 +1,24 @@
+.search {
+  width: 220px;
+  height: 35px;
+  background: #333;
+  border-radius: 50px;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 80%;
+}
+.search img {
+  width: 30px;
+  margin-left: 10px;
+}
+.search i {
+  margin-right: 10px;
+}

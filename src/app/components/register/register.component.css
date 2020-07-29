@@ -1,0 +1,70 @@
+#registerContainer {
+  width: 400px;
+  height: 370px;
+  position: relative;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: 0.5s ease-in all;
+
+  transform-style: preserve-3d;
+  transition: 0.5s all ease-in;
+}
+
+.frontFrom {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background-color: #333;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 0.5s ease-in all;
+}
+.backFrom {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background-color: #333;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: 0.5s ease-in all;
+}
+
+.swipe {
+  transform: rotateY(180deg);
+}
+.backFrom h3 {
+  margin-left: 300px;
+  cursor: pointer;
+}
+.backFrom h3:hover {
+  color: darkgray;
+}
+
+.closeButton {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}

@@ -1,0 +1,66 @@
+<div class="adminContainer">
+    <app-search></app-search>
+    <nav [class.addBlur]="formCalled">
+        <ul>
+            <li (click)="getCategory(category)" *ngFor="let category of categories" value="{{category.value}}">
+                {{category.category}}</li>
+        </ul>
+    </nav>
+    <div class="sideBarContainer">
+        <div [class.addBlur]="formCalled" class="sideBar">
+            <div class="sideBarHeader">
+                <h1>Hello Admin</h1>
+                <button (click)="addMode()">Add product</button>
+            </div>
+            <div class="editForm">
+                <form [formGroup]="productForm" (submit)="onSaveProduct()">
+                    <h1 class="editLogo">{{mode}} a product</h1>
+                    <label for="name">
+                        <input formControlName="name" [class.red]="checkValidation(fromControlers.name)" type="text"
+                            name="name" id="name" placeholder="Add Name">
+                        <small *ngIf="checkValidation(fromControlers.name)">Name is required</small>
+                    </label>
+                    <select formControlName="category" [class.red]="checkValidation(fromControlers.category)">
+                        <option value>Select Categoty</option>
+                        <option *ngFor="let category of categories" value="{{category.value}}">
+                            {{category.category}}-{{category.value}}</option>
+                    </select>
+                    <small *ngIf="checkValidation(fromControlers.category)">Categoty is required</small>
+                    <label for="price">
+                        <input formControlName="price" [class.red]="checkValidation(fromControlers.price)" type="text"
+                            name="price" id="price" placeholder="Add Price">
+                        <small *ngIf="checkValidation(fromControlers.price)">Price is required</small>
+                    </label>
+                    <input fromControlName="image" type="file" name="image" id="image" placeholder="image" #img
+                        (change)="onUpload($event)">
+                    <label [class.red]="checkValidation(fromControlers.image)" for="image" class="ImageUpload">
+                        Select Image <i class="far fa-images"></i>
+                    </label>
+                    <div class="imgUrl">{{imageURL}}</div>
+                    <small *ngIf="checkValidation(fromControlers.image)">Please select an Image</small>
+                    <button type="submit">Save product</button>
+                </form>
+            </div>
+        </div>
+        <h1 class="soBg">Shopping <br> Online</h1>
+
+    </div>
+    <div class="products">
+        <div class="card" *ngFor="let pro of products" [class.addBlur]="formCalled">
+            <div class="leftSide">
+                <img [src]="pro.product_img" alt="">
+            </div>
+
+            <div class="rightSide">
+                <div class="name">
+                    <h3>{{pro.product_name}}</h3>
+                </div>
+                <div class="price">
+                    <h5>{{pro.product_price | currency}}</h5>
+                </div>
+                <button (click)="editProduct(pro)">Edit</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,34 @@
+#loginForm {
+  width: 300px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  justify-content: space-around;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+#loginForm form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+b {
+  color: #fff;
+  font-size: 1.2em;
+}
+form a {
+  color: #fdfdfd;
+}
+form a:hover {
+  color: gold;
+}
+form a:hover b {
+  color: white;
+}

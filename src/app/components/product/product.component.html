@@ -1,0 +1,24 @@
+<div id="productContainer">
+    <div class="image">
+        <img src="{{product.product_img}}" alt="">
+        <div class="price">
+            <h1>Pirce : {{product.product_price | currency}}</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="name">
+            <h1>{{product.product_name}}</h1>
+        </div>
+        <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo soluta in suscipit ratione magni impedit!
+        </div>
+
+        <div class="units">
+            <div class="next" (click)="up()"></div>
+            <input (keyup)="getValue($event)" type="text" value="1" [(ngModel)]="units" name="units" id="unitsInput">
+            <div class="previous" (click)="down()"></div>
+        </div>
+        <button class="navigateButton addButton" (click)=" addProuct(quantity)" class="addButton">Add</button>
+        <button (click)="hideInfo()" class="navigateButton backButton">Back to shop</button>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div id="shopContainer">
+    <nav>
+        <div class="cartSideBar">
+            <div class="cartLogo">
+                <h1><i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
+                <span>Cart</span>
+            </div>
+            <div [class.open]="isOpen" (click)="menuButton()" class="menuButton">
+                <div class="menuButtonBurger">
+                </div>
+            </div>
+            <div class="stick"></div>
+        </div>
+        <div class="categories">
+            <ul class="ulCategories">
+                <li (click)="getCategoryValue(category)" *ngFor="let category of categories"
+                    value="{{category.category_id}}">
+                    <a class="activeButton">
+                        {{category.category_name}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="shopStoreContainer">
+        <div [class.addWidth]="isOpen" class="cart">
+            <side-bar [class.callSideBar]="isOpen"></side-bar>
+        </div>
+
+        <div [class.lessWidth]="isOpen" class="products">
+            <h1 class="soBg">Shopping <br> Online</h1>
+            <app-products></app-products>
+        </div>
+
+    </div>
+    <app-search></app-search>
+
+</div>

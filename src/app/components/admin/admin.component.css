@@ -1,0 +1,294 @@
+.adminContainer {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+}
+.sideBarContainer {
+  width: 20%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+.sideBar {
+  width: 20%;
+  height: 75%;
+  background-color: seagreen;
+  background-color: #333;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  position: fixed;
+}
+
+.sideBarHeader {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0 10px 10px #141414;
+}
+.sideBarHeader h1 {
+  text-shadow: 0 0 10px black;
+  text-align: center;
+}
+
+.sideBarHeader button {
+  width: 40%;
+  padding: 5px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: deepskyblue;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+.editLogo {
+  font-size: 22px;
+  text-align: center;
+}
+.products {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+}
+.addProductForm {
+  width: 450px;
+  height: 400px;
+  background-color: #333;
+  /* position: fixed; */
+  top: -200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  transition: 0.5s;
+}
+.addProductForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 55%;
+}
+.addProductForm input,
+select,
+button {
+  width: 100%;
+  outline: none;
+  /* margin-bottom: 10px; */
+}
+input[type="file"] {
+  display: none;
+}
+.ImageUpload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ImageUpload i {
+  margin-left: 10px;
+}
+.closeButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.closeButton:hover {
+  color: lightgray;
+}
+
+.callAddForm {
+  top: 50%;
+}
+.editForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+.editForm form {
+  width: 70%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.06), 2px 2px 2px rgba(0, 0, 0, 0.6);
+  position: fixed;
+}
+nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  background-color: #eee;
+  list-style: none;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 -1px 3px gray;
+  cursor: pointer;
+}
+.card {
+  margin: 50px 0 0 50px;
+  width: 250px;
+  height: 270px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  /* z-index: 1000; */
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+  font-weight: 700;
+  font-family: "MuseoModerno", cursive;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* z-index: -1; */
+  transform: rotate(10deg);
+  border-radius: 12px;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.04);
+  background: #dadada;
+  clip-path: circle(150px at 50% 5%);
+  transform: rotate(0);
+}
+.card:hover::before {
+  background: #333;
+  clip-path: circle(150px at 50% 100%);
+  color: white;
+}
+.card:hover {
+  color: white;
+}
+
+.leftSide,
+.rightSide {
+  width: 100%;
+  height: 100%;
+}
+.leftSide,
+.rightSide {
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.leftSide {
+  flex-direction: column;
+}
+.name h3 {
+  font-size: 1.5em;
+}
+.name {
+  max-width: 200px;
+  text-align: center;
+}
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.leftSide img {
+  width: 120px;
+  transition: 0.5s;
+}
+.card:hover .leftSide img {
+  margin-top: -15px;
+}
+.card button {
+  cursor: pointer;
+  width: 50%;
+  position: relative;
+  bottom: -80px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  border: none;
+  color: #333;
+  background: #fff;
+  border-radius: 5px;
+  border-bottom: 1px solid black;
+  width: 50px;
+  padding: 5px;
+}
+.card:hover button {
+  bottom: 0;
+}
+.addBlur {
+  filter: blur(1px);
+  pointer-events: none;
+}
+.imgUrl {
+  width: 100%;
+  font-size: 12px;
+  height: 50px;
+  overflow-x: auto;
+}
+
+.imgUrl::-webkit-scrollbar {
+  background-color: #444;
+  border-radius: 50px;
+}
+.imgUrl::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 2px;
+}
+app-search {
+  position: absolute;
+  z-index: 1000;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.soBg {
+  position: absolute;
+  font-size: 160px;
+  letter-spacing: 5px;
+  opacity: 0.05;
+  left: 60%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  text-align: center;
+}
