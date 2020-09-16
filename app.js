@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const userRoutes = require("../shopping-online/back-end/routes/users");
 const productsRoutes = require("../shopping-online/back-end/routes/products");
